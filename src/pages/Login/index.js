@@ -60,7 +60,7 @@ const Login = (props) => {
             setTimeout(() => {
                 history.push("/dashboard");
                 window.location.reload();
-            }, 1000)
+            }, 3000)
         } catch (error) {
             setSeverity("error");
             setNotificationMessage("Usuário ou senha inválida");
