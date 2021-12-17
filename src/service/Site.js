@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-axios.defaults.baseURL = 'http://localhost:3000/api'
+axios.defaults.baseURL = 'https://analytics-tool-api.herokuapp.com/api'
 
 export const getSiteAccess = async (site) => {
     return await axios.post('/site/access', site)
