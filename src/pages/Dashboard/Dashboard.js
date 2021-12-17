@@ -25,7 +25,7 @@ const Dashboard = (props) => {
         <div className={styles.container}>
             <p className={styles.title}>{`Dados de ${siteUrl}`}</p>
             <h3>{'Cole esse snippet em seu arquivo html: '}</h3>
-            <code>{'<script src="https://analytics-tool-3e04a.web.app/analytics.js"></script>'}</code>
+            <code>{'<script src="https://analytics-tool-script.web.app/analytics.js"></script>'}</code>
             <div style={{ marginTop: 10 }} />
             <div className={styles.divider} />
             <div className={styles.content}>
