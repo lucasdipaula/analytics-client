@@ -80,7 +80,6 @@ const SignUp = (props) => {
             setTimeout(() => {
                 history.push("/entrar");
             }, 1000)
-            window.location.reload();
         } catch (error) {
             setSeverity("error");
             setNotificationMessage("Usuário ou senha inválida");

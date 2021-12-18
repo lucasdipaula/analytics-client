@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import { CircularProgress } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -23,6 +24,7 @@ const Login = (props) => {
     const [email, setEmail] = React.useState('');
     const history = useHistory();
 
+    const [isLoading, setLoading] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [severity, setSeverity] = React.useState('');
     const [notificationMessage, setNotificationMessage] = React.useState('');
@@ -53,6 +55,7 @@ const Login = (props) => {
         }
 
         try {
+            setLoading(true);
             const res = await doLogin(userToLogin);
             setEmail('');
             setPassword('');
@@ -64,6 +67,7 @@ const Login = (props) => {
         } catch (error) {
             setSeverity("error");
             setNotificationMessage("Usuário ou senha inválida");
+            setLoading(false);
             handleClick();
         }
     }
@@ -112,7 +116,12 @@ const Login = (props) => {
                         className={classes.submit}
                         onClick={() => login()}
                     >
-                        Entrar
+                        {!isLoading ? "Entrar" :
+                            <CircularProgress
+                                style={{ color: 'white' }}
+                                size={25}
+                            />
+                        }
                     </Button>
 
                     <Grid container>
@@ -156,6 +165,7 @@ const useStyles = makeStyles((theme) => ({
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
+        height: '40px'
     },
     logo: {
         width: '25%',

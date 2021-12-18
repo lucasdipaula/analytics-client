@@ -8,6 +8,11 @@ const Dashboard = (props) => {
     const styles = useStyles();
     const [isLoading, setIsLoading] = useState(true);
     const [access, setAccess] = useState([]);
+
+    if (!props.loggedUser) {
+        window.location.reload();
+    }
+
     const { siteUrl } = props.loggedUser.user;
 
     useEffect(async () => {
