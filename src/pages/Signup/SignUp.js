@@ -42,7 +42,7 @@ const SignUp = (props) => {
     };
 
     const handleSubmit = async () => {
-        const urlRegEx = '^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$';
+        const urlRegEx = '^[a-z0-9]+([]{1}[a-z0-9]+)*[a-z]{2,5}(:[0-9]{1,5})?(.*)?$';
 
         if (password === '' || email === '' || passwordConfirm === '' || site === '' || username === '') {
             setSeverity("warning");
